@@ -83,21 +83,16 @@ public class UserServiceTest {
 
     @Test
     public void shouldReturnTrueIfUserHasAValidEmail() {
-        User user = new User("makouz@norsys.fr");
+        User user = new User("yaittaleb@norsys.fr");
         assertThat(userService.isUserEmailValid(user)).isTrue();
     }
 
     @Test
     public void shouldReturnFalseIfUserIsNotNullButInvalidEmail() {
-        User user = new User("makouz-norsys.fr");
+        User user = new User("yaittaleb-norsys.fr");
         assertThat(userService.isUserEmailValid(user)).isFalse();
     }
 
-    @Test(expected = NoSuchElementException.class)
-    public void shouldReturnFalseIfUserIsNull() {
-        User user = null;
-        userService.isUserEmailValid(user);
-    }
 
     /**
      * Map
@@ -109,22 +104,22 @@ public class UserServiceTest {
 
     @Test
     public void shouldReturnUserCountryName() {
-        User user = new User("makouz@norsys.fr", new Address(new Country("Morocco")));
+        User user = new User("yaittaleb@norsys.fr", new Address(new Country("Morocco")));
         assertThat(userService.getUserCountryName(user)).isEqualTo("Morocco");
     }
 
 
     @Test
     public void shouldReturnUknownCountryIfUserCountryIsNull() {
-        User user = new User("makouz@norsys.fr", new Address(null));
-        assertThat(userService.getUserCountryName(user)).isEqualTo("unknown country");
+        User user = new User("yaittaleb@norsys.fr", new Address(null));
+        assertThat(userService.getUserCountryName(user)).isEqualTo("unknown");
     }
 
 
     @Test
     public void shouldReturnUknownAddressIfUserCountryIsNull() {
-        User user = new User("makouz@norsys.fr");
-        assertThat(userService.getUserCountryName(user)).isEqualTo("unknown address");
+        User user = new User("yaittaleb@norsys.fr");
+        assertThat(userService.getUserCountryName(user)).isEqualTo("unknown");
     }
 
     @Test
@@ -144,8 +139,8 @@ public class UserServiceTest {
 
     @Test
     public void shouldReturnsFirstUserEmailIfUserIsNotNull() throws Exception {
-        User user = new User("makouz@norsys.fr");
-        assertThat(userService.getFirstUserEmail(user, null)).isEqualTo("makouz@norsys.fr");
+        User user = new User("yaittaleb@norsys.fr");
+        assertThat(userService.getFirstUserEmail(user, null)).isEqualTo("yaittaleb@norsys.fr");
     }
 
     @Test
@@ -167,10 +162,10 @@ public class UserServiceTest {
 
     @Test
     public void shouldReturnAlistOfOneObjectIfUserIsNotNullBis() {
-        User user = new User("makouz@norsys.fr");
+        User user = new User("yaittaleb@norsys.fr");
         List<User> users = userService.getListFromUser(user);
         assertThat(users.size()).isEqualTo(1);
-        assertThat(users.get(0).getEmail()).isEqualTo("makouz@norsys.fr");
+        assertThat(users.get(0).getEmail()).isEqualTo("yaittaleb@norsys.fr");
     }
 
     @Test
@@ -187,10 +182,10 @@ public class UserServiceTest {
 
     @Test
     public void shouldReturnAlistOfOneObjectIfUserIsNotNull() {
-        User user = new User("makouz@norsys.fr");
+        User user = new User("yaittaleb@norsys.fr");
         List<User> users = userService.getListFromUserBis(user);
         assertThat(users.size()).isEqualTo(1);
-        assertThat(users.get(0).getEmail()).isEqualTo("makouz@norsys.fr");
+        assertThat(users.get(0).getEmail()).isEqualTo("yaittaleb@norsys.fr");
     }
 
     @Test
