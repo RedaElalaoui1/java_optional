@@ -155,7 +155,7 @@ public class UserServiceTest {
     }
 
     /**
-     * Collections
+     * Collections.singletonList
      * Create a method that return a list of one user if it exists
      * and an Empty List if Empty
      */
@@ -175,7 +175,7 @@ public class UserServiceTest {
     }
 
     /**
-     * Collections
+     * Collections.singletonList
      * Create a method that return a list of one user if it's not null
      * else returns a list with user "random@norsys.fr"
      */
