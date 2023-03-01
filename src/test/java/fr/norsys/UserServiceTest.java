@@ -112,14 +112,14 @@ public class UserServiceTest {
     @Test
     public void shouldReturnUknownCountryIfUserCountryIsNull() {
         User user = new User("yaittaleb@norsys.fr", new Address(null));
-        assertThat(userService.getUserCountryName(user)).isEqualTo("unknown");
+        assertThat(userService.getUserCountryName(user)).isEqualTo("unknown country");
     }
 
 
     @Test
     public void shouldReturnUknownAddressIfUserCountryIsNull() {
         User user = new User("yaittaleb@norsys.fr");
-        assertThat(userService.getUserCountryName(user)).isEqualTo("unknown");
+        assertThat(userService.getUserCountryName(user)).isEqualTo("unknown address");
     }
 
     @Test
